@@ -1426,4 +1426,14 @@ section[id] {
     font-weight: 600;
     padding: 8px 0;
   }
+
+.developer-signature {
+  display: block;
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+
 }
