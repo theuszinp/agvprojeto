@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "11955549630";
+const WHATSAPP_NUMBER = "5511955549630";
 
 const DEFAULT_WA_MESSAGE =
   "Olá! Quero atendimento da Universo AGV pelo WhatsApp.";
