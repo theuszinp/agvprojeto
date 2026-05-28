@@ -1124,6 +1124,21 @@ section[id] {
   color: var(--text);
 }
 
+.location-hours {
+  display: grid;
+  gap: 4px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  line-height: 1.35;
+}
+
+.location-hours small {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
 .location-actions {
   display: flex;
   gap: 16px;
