@@ -55,7 +55,7 @@ if (quoteForm) {
       ["nome", "Nome"],
       ["telefone", "Telefone / WhatsApp"],
       ["tipo", "Tipo do veículo"],
-      ["modelo", "Modelo"],
+      ["modelo", "Placa"],
       ["cidade", "Cidade / UF"],
     ];
 
