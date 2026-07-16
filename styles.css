@@ -1317,6 +1317,11 @@ section[id] {
 .floating-wa svg {
   width: 32px;
   height: 32px;
+  pointer-events: none;
+}
+
+.floating-wa svg * {
+  pointer-events: none;
 }
 
 @keyframes float-vehicle {
