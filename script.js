@@ -8,11 +8,11 @@ const buildWhatsAppUrl = (message) =>
 
 const openWhatsApp = (message) => {
   const url = buildWhatsAppUrl(message || DEFAULT_WA_MESSAGE);
-  const win = window.open(url, "_blank", "noopener,noreferrer");
-
-  if (!win) {
-    window.location.href = url;
-  }
+  const link = document.createElement("a");
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.click();
 };
 
 const qs = (selector, scope = document) => scope.querySelector(selector);
@@ -33,13 +33,11 @@ const setImageWithFallback = (imgElement, primarySrc, fallbackSrc, altText = "")
 };
 
 /* LINKS WHATSAPP */
-document.addEventListener("click", (event) => {
-  const link = event.target.closest(".js-wa-link");
-  if (!link) return;
-
-  event.preventDefault();
+qsa(".js-wa-link").forEach((link) => {
   const message = link.dataset.message || DEFAULT_WA_MESSAGE;
-  openWhatsApp(message);
+  link.href = buildWhatsAppUrl(message);
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
 });
 
 /* FORMULÁRIO */
@@ -411,7 +409,11 @@ function renderActiveService() {
     .join("");
 
   if (serviceWaLink) {
-    serviceWaLink.dataset.message = `Olá! Quero fazer uma simulação para ${activeService.title.toLowerCase()} na Universo AGV.`;
+    const message = `Olá! Quero fazer uma simulação para ${activeService.title.toLowerCase()} na Universo AGV.`;
+    serviceWaLink.dataset.message = message;
+    serviceWaLink.href = buildWhatsAppUrl(message);
+    serviceWaLink.target = "_blank";
+    serviceWaLink.rel = "noopener noreferrer";
   }
 
   renderTabs();
